@@ -21,18 +21,16 @@ public class User {
 
     @NotBlank (message = "Must verify password")
     @NotNull (message = "Must verify password")
-    private String verify;
 
     public User() {
 
     }
 
-    public User(String username, String email, String password, String verify) {
+    public User(String username, String email, String password) {
         this();
         this.username = username;
         this.email = email;
         this.password = password;
-        this.verify = verify;
     }
 
 
@@ -60,11 +58,4 @@ public class User {
         this.password = password;
     }
 
-    public String getVerify() {
-        return verify;
-    }
-
-    public void setVerify(String verify) {
-        this.verify = verify;
-    }
 }

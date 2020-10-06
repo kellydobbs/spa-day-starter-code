@@ -13,20 +13,18 @@ import javax.validation.Valid;
 public class UserController {
 
     @GetMapping("/add")
-    public String displayAddUserForm(Model model, User user) {
+    public String displayAddUserForm(Model model) {
         model.addAttribute(new User());
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("email", user.getEmail());
-        model.addAttribute("username", user.getPassword());
         return "user/add";
     }
 
     @PostMapping
-    public String processAddUserForm(Model model, String verify, @ModelAttribute @Valid User user, Errors errors) {
+    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
+        model.addAttribute(user);
         model.addAttribute("verify", verify);
 
         if (errors.hasErrors()){
-            model.addAttribute("errorMsg", "There are errors in the data");
+            model.addAttribute(errors);
             return "user/add";
         }
 

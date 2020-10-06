@@ -10,24 +10,30 @@
         <label>
             Username:
             <input th:field = "${user.username}" th:value="${username}">
-            <p th:errors = "${user.username}" ></p>
-        </label><br>
+        </label>
+        <p th:errors = "${user.username}" ></p>
+        <br>
+        <br>
 
         <label>
             Email:
             <input th:field = "${user.email}" th:value="${email}">
-            <p th:errors = "${user.email}" ></p>
-        </label><br>
+        </label>
+        <p th:errors = "${user.email}" ></p>
+        <br>
+        <br>
 
         <label>
             Password:
             <input type = 'password' th:field = "${user.password}" name = 'password'>
-            <p th:errors = "${user.password}" ></p>
-        </label><br>
+        </label>
+        <p th:errors = "${user.password}" ></p>
+        <br>
+        <br>
 
         <label>
             Verify Password:
-            <input type = 'password' th:field="${user.verify}"  name = 'verify'>
+            <input type = 'password' name = 'verify'>
         </label>
 
         <input type = 'submit' value = 'Sign Up'>
